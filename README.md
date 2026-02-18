@@ -1,77 +1,57 @@
 # JPG_ARW_Auto_Classification
 
-## 概要
+## 🇯🇵 日本語
 
-一眼カメラに保存されたJPGとARW（RAW）ファイルをフォルダごとに自動的に分類するWindowsアプリケーションです。
+### 概要
+一眼カメラで撮影したJPGとARW（RAW）ファイルを自動的に分類するWindows用デスクトップアプリケーションです。SDカードの日付フォルダをドラッグ＆ドロップするだけで、PC上の指定フォルダにJPG/ARWを振り分けてコピーします。
 
 ### 主な機能
+- **ドラッグ＆ドロップ対応**: フォルダをドロップするだけで即座に処理開始（複数フォルダ対応）
+- **自動分類**: JPGとARWファイルを別々のサブフォルダに整理
+- **システムテーマ対応**: Windows 11のライト/ダークモードに自動追従するFluent Design UI
+- **パス記憶機能**: 前回使用した保存先フォルダを自動的に記憶
+- **安全なコピー**: 元ファイルを削除せずコピーするため、データ消失のリスクがありません
 
-- **ドラッグ&ドロップ対応**: SDカードのフォルダをドロップするだけで即座に処理開始
-- **自動分類**: JPGとARWファイルを別々のフォルダに整理
-- **システムテーマ対応**: Windows 11のライト/ダークモードに自動対応
-- **モダンUI**: Fluent Designに基づいた洗練されたインターフェース
-- **安全なコピー**: 元のファイルはSDカードに残したまま、PCにコピー
-- **リアルタイム進捗表示**: パーセント表示付きの進捗バー
-- **パス記憶機能 (v2.0機能)**: 前回使用した移動先フォルダを自動的に記憶
-
-### v2.0の新機能
-
-パス記憶機能
-- 前回使用した移動先フォルダのパスを自動的に記憶します。アプリを再起動しても前回の設定が保持されるため、毎回フォルダを選択する手間が省けます。
-- 設定は `C:\Users\[ユーザー名]\.jpg_arw_classifier\config.json` に保存されます。
+### 使用技術
+- Python 3.12
+- CustomTkinter (Fluent Design UI)
+- TkinterDnD2 (ドラッグ＆ドロップ)
+- PyInstaller (exe化)
 
 ### インストール方法
-最新版のインストーラは Releases からダウンロードできます．
+最新版のインストーラは Releases からダウンロードできます。
+詳細な手順は以下を参照してください。
+
+📄 **[DISTRIBUTION_GUIDE.md](./DISTRIBUTION_GUIDE.md)**
 
 ### 動作環境
 - Windows 10 / 11（64bit）
 
-## 使い方
-
-### 基本的な使い方
-
-1. **アプリケーションを起動**
-2. **移動先フォルダを選択**
-   - 「参照」ボタンをクリックして、PC内の保存先フォルダを選択
-   - ※次回以降は前回選択したフォルダが自動的に設定されます
-3. **フォルダをドロップ**
-   - SDカードの日付フォルダをドロップエリアにドラッグ&ドロップ
-4. **自動処理**
-   - ファイルが自動的に分類され、進捗が表示されます
-5. **完了**
-   - 処理完了後、移動先フォルダが自動的に開きます
-
-### 生成されるフォルダ構造
-
-```
-移動先フォルダ/
-└── 2026-02-15/          # 元のフォルダ名を保持
-    ├── JPG/             # JPGファイル
-    │   ├── 00001.jpg
-    │   └── 00002.jpg
-    └── ARW/             # ARWファイル
-        ├── 00001.arw
-        └── 00002.arw
-```
-
-### 注意事項
-
-- このアプリはファイルを**コピー**します（移動ではありません）
-- SDカード側にも元のファイルが残るため、安全性が高いです
-- コピー後、SDカードの容量を空けたい場合は手動で削除してください
-
-## バージョン履歴
-
-### v2.0 (2026-02-17)
-- **新機能**: 移動先フォルダパスの記憶機能を追加
-
-### v1.0 (2026-02-15)
-- 初回リリース
-- ドラッグ&ドロップ対応
-- Fluent Design UI
-- システムテーマ自動対応
-
 ---
 
-## 📄 License
-MIT License
+## 🇺🇸 English
+
+### Overview
+A Windows desktop application that automatically classifies JPG and ARW (RAW) files taken with digital cameras. Simply drag and drop date folders from your SD card, and it will copy and sort JPG/ARW files into specified folders on your PC.
+
+### Features
+- **Drag & Drop Support**: Start processing instantly by dropping folders (supports multiple folders)
+- **Auto Classification**: Organizes JPG and ARW files into separate subfolders
+- **System Theme Support**: Fluent Design UI that automatically adapts to Windows 11 Light/Dark modes
+- **Path Memory**: Automatically remembers the last used destination folder
+- **Safe Copy**: Copies files without deleting originals, ensuring data safety
+
+### Tech Stack
+- Python 3.12
+- CustomTkinter (Fluent Design UI)
+- TkinterDnD2 (Drag & Drop)
+- PyInstaller (Executable creation)
+
+### Installation
+You can download the latest installer from Releases.
+For detailed instructions, please refer to:
+
+📄 **[DISTRIBUTION_GUIDE.md](./DISTRIBUTION_GUIDE.md)**
+
+### System Requirements
+- Windows 10 / 11 (64-bit)
